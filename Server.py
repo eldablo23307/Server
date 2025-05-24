@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    file_list = subprocess.check_output("ls /home/mottu/file", shell=True, text=True)
+    file_list = subprocess.check_output("ls ./file", shell=True, text=True)
     print(file_list)
 
 
