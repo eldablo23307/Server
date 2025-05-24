@@ -3,11 +3,11 @@ import os
 
 app = Flask(__name__)
 
-def file_in_directory(path: str) -> list:
+def file_in_directory(path: str):
     file_list = os.listdir(f"/home/mottu/{path}")
     json = []
     if file_list == None:
-        return ["Cartella Vuota"]
+        return "Cartella Vuota"
     else:
         for x in range(len(file_list)):
             json.append({"path": str(os.path(file_list[x]))})
