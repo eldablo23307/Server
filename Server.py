@@ -2,6 +2,7 @@ from flask import Flask, request
 import os
 
 app = Flask(__name__)
+print(os.listdir("file"))
 
 @app.route("/")
 def home():
