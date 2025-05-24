@@ -1,14 +1,17 @@
-from flask import Flask, request
+from flask import Flask, request, jsonify
 import os
 
 app = Flask(__name__)
 
 def file_in_directory(path: str) -> list:
     file_list = os.listdir(f"/home/mottu/{path}")
+    json = []
     if file_list == None:
         return ["Cartella Vuota"]
     else:
-        return file_list
+        for x in range(len(file_list)):
+            json.append({"path": str(os.path(file_list[x]))})
+        return jsonify(json)
 
 @app.route("/")
 def home():
