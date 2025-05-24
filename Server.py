@@ -12,11 +12,7 @@ def file_in_directory(path: str) -> list:
 
 @app.route("/")
 def home():
-    lista_dir = ""
-    for x in file_in_directory("file"):
-        lista_dir = f"{x}\n"
-    
-    return lista_dir
+    return file_in_directory("file")
 
 
 
