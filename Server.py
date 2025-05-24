@@ -1,12 +1,12 @@
 from flask import Flask, request
-import os
+import subprocess
 
 app = Flask(__name__)
 
 @app.route("/")
 def home():
-    file_list = os.system("ls home/mottu/file")
-    print(x for x in file_list)
+    file_list = subprocess.check_output("ls /home/mottu/file", shell=True, text=True)
+    print(file_list)
 
 
 if __name__ == "__main__":
