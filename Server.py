@@ -5,7 +5,8 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "Welcome to the Flask Server!"
+    file_list = os.system("ls home/mottu/file")
+    print(x for x in file_list)
 
 
 if __name__ == "__main__":
