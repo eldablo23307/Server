@@ -3,11 +3,18 @@ import os
 
 app = Flask(__name__)
 
+def file_in_directory() -> list:
+    file_list = os.listdir("/home/mottu/file")
+    return file_list
 
 @app.route("/")
 def home():
-    file_list = os.listdir("file")
-    return file_list
+    lista_dir = ""
+    for x in file_in_directory():
+        lista_dir = f"{x}\n"
+    
+    return lista_dir
+
 
 
 if __name__ == "__main__":
