@@ -82,7 +82,7 @@ class FileManagerApp(App):
     
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        self.server_url = "http://192.168.1.100:5000"  # Modifica con l'IP del tuo server
+        self.server_url = "http://100.95.136.3:5000"  # Modifica con l'IP del tuo server
         self.current_path = ""
         
     def build(self):
@@ -95,7 +95,7 @@ class FileManagerApp(App):
         # Input server URL
         self.server_input = TextInput(
             text=self.server_url,
-            hint_text='Server URL (es: http://192.168.1.100:5000)',
+            hint_text='Server URL (es: http://100.95.136.3:5000)',
             multiline=False,
             size_hint_x=0.7
         )
