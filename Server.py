@@ -1,11 +1,11 @@
 from flask import Flask, request
-import subprocess
+import os
 
 app = Flask(__name__)
 
 @app.route("/")
 def home():
-    file_list = subprocess.check_output("ls ./file", shell=True, text=True)
+    file_list = os.listdir("file")
     print(file_list)
 
 
