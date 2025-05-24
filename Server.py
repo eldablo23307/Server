@@ -9,9 +9,7 @@ def file_in_directory(path: str):
     if file_list == None:
         return "Cartella Vuota"
     else:
-        for x in range(len(file_list)):
-            json.append({"path": str(os.path(file_list[x]))})
-        return jsonify(json)
+        return file_list
 
 @app.route("/")
 def home():
