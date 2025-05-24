@@ -3,13 +3,22 @@ import os
 
 app = Flask(__name__)
 
+def check_type(file: str):
+    if "." in file:
+        return "file"
+    else:
+        return "dir"
+
 def file_in_directory(path: str):
     file_list = os.listdir(f"/home/mottu/{path}")
     json = []
     if file_list == None:
         return "Cartella Vuota"
     else:
-        return file_list
+        for i in range(len(file_list)):
+            json.append({"file": file_list[i], "type": check_type(file_list[i])})
+
+    return jsonify(json)
 
 @app.route("/")
 def home():
